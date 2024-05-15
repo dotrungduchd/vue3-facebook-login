@@ -4,38 +4,38 @@
   </div>
 </template>
 <script setup>
-import { onMounted } from 'vue';
-import axios from 'axios'
+import { onMounted } from "vue";
+import axios from "axios";
 
 const props = defineProps({
   appId: {
     type: String,
-    required: true
+    required: true,
   },
   version: {
     type: String,
-    default: 'v18.0'
+    default: "v18.0",
   },
   scope: {
     type: String,
-    default: ''
+    default: "",
   },
   fields: {
     type: String,
-    default: ''
-  }
-})
+    default: "",
+  },
+});
 
-const emits = defineEmits(['onSuccess', 'onFailure'])
+const emits = defineEmits(["onSuccess", "onFailure"]);
 
 onMounted(() => {
   loadFacebookSDK(document, "script", "facebook-jssdk");
   initFacebook();
-})
+});
 
 const initFacebookLogin = async () => {
-  logInWithFacebook()
-}
+  logInWithFacebook();
+};
 
 const logInWithFacebook = async () => {
   try {
@@ -44,32 +44,35 @@ const logInWithFacebook = async () => {
       await initFacebook(props.appId, props.version);
 
       // Check the current login status
-      window.FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-          // User is already connected
-          return extractInfo(response);
-        } else {
-          // User is not connected, trigger the login flow
-          window.FB.login(function(response) {
-            if (response.authResponse) {
-              // User successfully logged in
-              return extractInfo(response);
-            } else {
-              // Login failed
-              return emits('onFailure');
-            }
-          }, {scope: props.scope});
-        }
-      });
+      //window.FB.getLoginStatus(function (response) {
+      // if (response.status === 'connected') {
+      //   // User is already connected
+      //   return extractInfo(response);
+      // } else {
+      // User is not connected, trigger the login flow
+      window.FB.login(
+        function (response) {
+          if (response.authResponse) {
+            // User successfully logged in
+            return extractInfo(response);
+          } else {
+            // Login failed
+            return emits("onFailure");
+          }
+        },
+        { scope: props.scope }
+      );
+      // }
+      //});
 
       return false;
     } else {
-      return emits('onFailure', 'appId is required')
+      return emits("onFailure", "appId is required");
     }
   } catch (error) {
-    return emits('onFailure')
+    return emits("onFailure");
   }
-}
+};
 
 const initFacebook = async () => {
   window.fbAsyncInit = function () {
@@ -81,7 +84,7 @@ const initFacebook = async () => {
     });
     window.FB.AppEvents.logPageView();
   };
-}
+};
 
 const loadFacebookSDK = async (d, s, id) => {
   var js,
@@ -93,22 +96,24 @@ const loadFacebookSDK = async (d, s, id) => {
   js.id = id;
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
-}
+};
 
 const getAuthInfo = async (accessToken) => {
-  const response = await axios.get(`https://graph.facebook.com/${props.version}/me?fields=${props.fields}&access_token=${accessToken}`)
-  return response?.data
-}
+  const response = await axios.get(
+    `https://graph.facebook.com/${props.version}/me?fields=${props.fields}&access_token=${accessToken}`
+  );
+  return response?.data;
+};
 
 const extractInfo = async (response) => {
   if (props.fields) {
-    let authInfo = {}
+    let authInfo = {};
     if (props.fields) {
-      authInfo = await getAuthInfo(response.authResponse.accessToken)
+      authInfo = await getAuthInfo(response.authResponse.accessToken);
     }
-    return emits('onSuccess', {...response, authInfo})
+    return emits("onSuccess", { ...response, authInfo });
   } else {
-    return emits('onSuccess', {...response})    
+    return emits("onSuccess", { ...response });
   }
-}
+};
 </script>
