@@ -1,7 +1,7 @@
 # Vue 3 facebook login
 
-[![npm](https://img.shields.io/npm/v/@healerlab/vue3-facebook-login?style=flat-square)](https://www.npmjs.com/package/@healerlab/vue3-facebook-login)
-[![npm](https://img.shields.io/npm/dw/@healerlab/vue3-facebook-login?style=flat-square)](https://www.npmjs.com/package/@healerlab/vue3-facebook-login)
+[![npm](https://img.shields.io/npm/v/@dotrungduchd/vue3-facebook-login?style=flat-square)](https://www.npmjs.com/package/@dotrungduchd/vue3-facebook-login)
+[![npm](https://img.shields.io/npm/dw/@dotrungduchd/vue3-facebook-login?style=flat-square)](https://www.npmjs.com/package/@dotrungduchd/vue3-facebook-login)
 [![GitHub](https://img.shields.io/github/license/healerlab/vue3-facebook-login?style=flat-square)](https://github.com/healerlab/vue3-facebook-login/blob/main/LICENSE)
 
 ## Demo
@@ -18,19 +18,19 @@
 To get started, you can install `vue3-facebook-login` with:
 
 ```bash
-npm i @healerlab/vue3-facebook-login
+npm i @dotrungduchd/vue3-facebook-login
 ```
 
 with pnpm:
 
 ```bash
-pnpm add @healerlab/vue3-facebook-login
+pnpm add @dotrungduchd/vue3-facebook-login
 ```
 
 with yarn:
 
 ```bash
-yarn add @healerlab/vue3-facebook-login
+yarn add @dotrungduchd/vue3-facebook-login
 ```
 
 
@@ -42,7 +42,7 @@ Import the component and register it locally in your Vue component:
 
 ```vue
 <script setup>
-import { HFaceBookLogin } from '@healerlab/vue3-facebook-login';
+import { HFaceBookLogin } from '@dotrungduchd/vue3-facebook-login';
 
 const onSuccess = (response) => {
   // get your auth token and info

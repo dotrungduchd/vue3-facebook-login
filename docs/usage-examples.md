@@ -13,15 +13,15 @@ To get started, you can install it with:
 ::: code-group
 
 ```sh [npm]
-$ npm i @healerlab/vue3-facebook-login
+$ npm i @dotrungduchd/vue3-facebook-login
 ```
 
 ```sh [pnpm]
-$ pnpm add @healerlab/vue3-facebook-login
+$ pnpm add @dotrungduchd/vue3-facebook-login
 ```
 
 ```sh [yarn]
-$ yarn add @healerlab/vue3-facebook-login
+$ yarn add @dotrungduchd/vue3-facebook-login
 ```
 
 :::
@@ -32,7 +32,7 @@ Import the component and register it locally in your Vue component:
 
 ```vue
 <script setup>
-import { HFaceBookLogin } from '@healerlab/vue3-facebook-login';
+import { HFaceBookLogin } from '@dotrungduchd/vue3-facebook-login';
 
 const onSuccess = (response) => {
   // get your auth token and info

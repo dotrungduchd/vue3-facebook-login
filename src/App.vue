@@ -13,7 +13,7 @@
   </div>
 </template>
 <script setup>
-import { HFaceBookLogin } from '@healerlab/vue3-facebook-login';
+import { HFaceBookLogin } from '@dotrungduchd/vue3-facebook-login';
 
 const onSuccess = (response) => {
   // get your auth token and info

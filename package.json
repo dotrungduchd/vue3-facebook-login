@@ -1,7 +1,7 @@
 {
   "name": "@dotrungduchd/vue3-facebook-login",
   "private": false,
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "Powerful, lightweight Facebook login component for Vue 3",
   "main": "./dist/h-facebook-login.umd.cjs",
   "module": "./dist/h-facebook-login.js",
@@ -56,8 +56,11 @@
     "type": "git",
     "url": "https://github.com/dotrungduchd/vue3-facebook-login.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@dotrungduchd"
+  },
   "dependencies": {
-    "@dotrungduchd/vue3-facebook-login": "^0.1.7",
+    "@dotrungduchd/vue3-facebook-login": "^0.1.9",
     "axios": "^1.6.2"
   }
 }

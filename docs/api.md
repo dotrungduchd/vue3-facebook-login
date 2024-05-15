@@ -56,7 +56,7 @@ This page demonstrates usage of props and events provided by HFaceBookLogin.
 ```
 See the [FaceBook Graph API](https://developers.facebook.com/tools/explorer) for more information about scope.
 
-See the [Vue3 FaceBook Login](https://www.npmjs.com/package/@healerlab/vue3-facebook-login) package for more information.
+See the [Vue3 FaceBook Login](https://www.npmjs.com/package/@dotrungduchd/vue3-facebook-login) package for more information.
 
 
 ## Demo Examples
@@ -65,7 +65,7 @@ Here we display a list of settings that could be applied within an application.
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import pkg from "@healerlab/vue3-facebook-login";
+import pkg from "@dotrungduchd/vue3-facebook-login";
 const { HFaceBookLogin } = pkg
 
 const appState = reactive({
