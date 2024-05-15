@@ -48,13 +48,13 @@
     "vue-tsc": "^1.8.5"
   },
   "license": "MIT",
-  "homepage": "https://healerlab.github.io/vue3-facebook-login",
+  "homepage": "https://github.com/dotrungduchd/vue3-facebook-login",
   "bugs": {
-    "url": "https://github.com/healerlab/vue3-facebook-login/issues"
+    "url": "https://github.com/dotrungduchd/vue3-facebook-login/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/healerlab/vue3-facebook-login.git"
+    "url": "https://github.com/dotrungduchd/vue3-facebook-login.git"
   },
   "dependencies": {
     "@dotrungduchd/vue3-facebook-login": "^0.1.7",
